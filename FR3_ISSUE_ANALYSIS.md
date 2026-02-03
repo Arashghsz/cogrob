@@ -83,6 +83,12 @@ When safety limits are violated, Franka controllers perform:
 - **Brake system checks** (visible in logs as extended brake operations)
 - **Firmware validation** (possible silent background checks)
 
+### Contributing Factor: Improper Shutdown
+- **10:18:04.685** - Robot brakes closed
+- **10:18:06.000** - System powered off (only 2 seconds after brakes closed)
+- This abrupt shutdown (likely hard power button press) left the system in an uncertain state
+- Combined with prior safety violations, this forced a full system validation and diagnostics on the next boot
+
 ---
 
 ## Evidence from Logs
